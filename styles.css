@@ -1,0 +1,887 @@
+/* ===== Futura Webfonts ===== */
+@font-face {
+    font-family: "Futura";
+    src: url("fonts/Futura-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Futura";
+    src: url("fonts/Futura-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* ===== Farb-Variablen für dein CI ===== */
+:root {
+    --color-primary: #27519f;
+    --color-primary-dark: #1f3f7a;
+    --color-secondary: #eb8400;
+    --color-bg: #f7f6f6;
+    --color-surface: #ffffff;
+    --color-text: #000000;
+    --color-muted: #4b5563;
+    --color-border-soft: rgba(148, 163, 184, 0.35);
+  }
+  
+  /* ===== Grundlayout & Reset ===== */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Futura", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 500; /* Futura Medium */
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.5;
+  }
+  
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    margin-top: 0;
+    font-family: "Futura", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 700; /* Futura Bold */
+  }
+  
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  /* ===== Buttons ===== */
+  
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--color-primary);
+    color: #fff;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    text-align: center;
+    font-family: "Futura", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 700; /* Bold */
+  }
+
+  .btn--primary {
+    background-color: #ffffff;
+    color: #27519f;
+    border: 2px solid #ffffff;
+  }
+
+  .btn--primary:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+  
+  .btn:hover {
+    background: var(--color-primary-dark);
+    box-shadow: 0 12px 24px rgba(39, 81, 159, 0.25);
+    transform: translateY(-1px);
+  }
+  
+  .btn--ghost {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid rgba(39, 81, 159, 0.4);
+  }
+  
+  .btn--ghost:hover {
+    background: rgba(39, 81, 159, 0.06);
+  }
+  
+  .btn--outline {
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+  
+  .btn--outline:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+  
+  .btn--small {
+    padding: 0.45rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn--block {
+    width: 100%;
+  }
+  
+ /* Header allgemein */
+.header {
+  background-color: rgba(39, 81, 159, 0.95);
+  border: none;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* Logo */
+.header .logo {
+  color: #f7f6f6; /* hellgrau */
+}
+
+/* Navigation */
+.header .nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header .nav a:hover {
+  color: #ffffff;
+}
+
+/* Navigationslinie unterhalb des Links (optional hell machen) */
+.header .nav a::after {
+  background: #ffffff;
+}
+
+/* Call-to-Action-Button im Header */
+.header .btn--outline {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+.header .btn--outline:hover {
+  background: #ffffff;
+  color: #27519f;
+}
+
+  /* Header-Inhalt */
+    .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0;
+  }
+  
+  /* Logo */
+  .logo {
+    font-family: "Futura", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;   
+  }
+
+  header .logo {
+    color: #f7f6f6;
+  }
+
+  /* ===== Logo-Bild anstelle von Text ===== */
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .logo__img {
+    height: 42px; /* Logo-Höhe anpassen */
+    width: auto;
+    display: block;
+  }
+  
+  /* Optional: Wenn du oben etwas mehr Abstand brauchst */
+  .header__inner {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+  
+  .nav a,
+  .nav a:hover {
+    color: inherit;
+  }
+  
+  .logo span {
+    color: inherit;
+  }
+  
+  
+  
+  header .nav a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+
+  header .nav a:hover {
+    color: #ffffff;
+  }
+
+  
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.15s ease;
+  }
+  
+  .nav a:hover::after {
+    width: 100%;
+  }
+  
+  .header__cta {
+    margin-left: 0.5rem;
+  }
+
+  /* ===== Navigation-Abstände korrigieren ===== */
+  .header .nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Abstand zwischen den Links */
+    font-size: 0.95rem;
+    padding: 0.4rem 0; /* vertikaler Abstand */
+  }
+
+  /* Leicht mehr Abstand nach oben/unten für den Header insgesamt */
+  .header__inner {
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+  }
+
+  
+  /* Mobile Nav Toggle */
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-toggle-label {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #111827;
+    border-radius: 999px;
+    position: relative;
+    transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  
+  .nav-toggle-label span::before {
+    top: -7px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  
+  /* Toggle animation */
+  .nav-toggle:checked + .nav-toggle-label span {
+    transform: rotate(45deg);
+  }
+  
+  .nav-toggle:checked + .nav-toggle-label span::before {
+    top: 0;
+  }
+  
+  .nav-toggle:checked + .nav-toggle-label span::after {
+    top: 0;
+    transform: rotate(-90deg);
+  }
+  
+  /* ===== Absperrband am unteren Hero-Rand ===== */
+.absperrband {
+  position: absolute;
+  left: 50%;
+  bottom: -3rem;            /* wie stark es in den nächsten Bereich hineinragt */
+  transform: translateX(-50%);
+  width: 120%;
+  max-width: none;
+  z-index: 2;
+  pointer-events: none;      /* nichts blockieren */
+}
+
+.absperrband img {
+  width: 100%;
+  max-width: none;
+  display: block;
+  transform: rotate(-5deg);  /* leicht schräg, wie in deiner Idee */
+  transform-origin: center;
+  opacity: 0.95;
+}
+
+
+  /* ===== Hero ===== */
+  
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: 5rem 0 6rem; /* etwas mehr Platz unten fürs Band */
+    background: radial-gradient(
+      circle at top left,
+      #e1e7f5 0,
+      var(--color-bg) 40%,
+      var(--color-bg) 100%
+    );
+  }
+  
+  .hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .hero__content h1 {
+    font-size: clamp(2.2rem, 3vw + 1.2rem, 3rem);
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero__content p {
+    font-size: 1.05rem;
+    max-width: 36rem;
+    color: var(--color-muted);
+  }
+  
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.6rem 0 1.2rem;
+  }
+  
+  .hero__highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.2rem;
+    color: #374151;
+    font-size: 0.95rem;
+  }
+  
+  .hero__highlights li::before {
+    content: "";
+  }
+  
+ /* ===== Hero Layout-Anpassung ===== */
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* Text leicht breiter als Bild */
+  align-items: stretch; /* beide Spalten gleich hoch */
+  gap: 2rem;
+}
+
+/* ===== Slideshow-Container vergrößern ===== */
+.hero__slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%; /* gleiche Höhe wie Textblock */
+  min-height: 320px; /* falls Text kurz ist */
+  max-height: 520px; /* damit’s nicht zu riesig wird */
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero__slideshow .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideshow 25s infinite;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Bildgrößenverteilung (unverändert) */
+.hero__slideshow .slide:nth-child(1) { animation-delay: 0s; }
+.hero__slideshow .slide:nth-child(2) { animation-delay: 5s; }
+.hero__slideshow .slide:nth-child(3) { animation-delay: 10s; }
+.hero__slideshow .slide:nth-child(4) { animation-delay: 15s; }
+.hero__slideshow .slide:nth-child(5) { animation-delay: 20s; }
+
+@keyframes slideshow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  20% { opacity: 1; }
+  25% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Mobile: untereinander */
+@media (max-width: 768px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__slideshow {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+  
+  /* ===== Sektionen allgemein ===== */
+  
+  .section {
+    padding: 4rem 0;
+    background: var(--color-bg);
+  }
+  
+  .section--light {
+    background: var(--color-surface);
+  }
+  
+  .section--accent {
+    background: #edf0f8;
+  }
+  
+  .section__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .section__header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .section__header p {
+    margin: 0;
+    color: #6b7280;
+  }
+  
+  /* ===== Grid-Layouts ===== */
+  
+  .grid {
+    display: grid;
+    gap: 1.8rem;
+  }
+  
+  .grid--3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.8rem;
+    align-items: stretch; /* sorgt für gleiche Höhe */
+  }
+  
+  /* ===== Cards / Features ===== */
+  
+  /* Einheitliche Karten inkl. Rahmen + gleich hohe Kacheln */
+  .card {
+    background: var(--color-surface);
+    border-radius: 1.2rem;
+    padding: 1.7rem 1.6rem;
+    border: 1px solid var(--color-border-soft);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.04);
+
+    /* Gleichhöhe / Layout */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  
+  .card h3 {
+    margin-bottom: 0.6rem;
+  }
+  
+  .card p {
+    margin-bottom: 0.9rem;
+    color: var(--color-muted);
+  }
+  
+  .card__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    font-size: 0.95rem;
+    color: #374151;
+  }
+  
+  .card__list li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .card__list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+  }
+
+  /* Bildkarte (gleiche Höhe, füllt Fläche voll aus) */
+  .card--image {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .card--image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+  
+  /* Features */
+  .feature {
+    padding: 1.5rem 1.4rem;
+    border-radius: 1.2rem;
+    background: #f2f4fb;
+    border: 1px solid rgba(39, 81, 159, 0.2);
+  }
+  
+  .feature h3 {
+    margin-bottom: 0.4rem;
+  }
+  
+  .feature p {
+    margin: 0;
+    color: var(--color-muted);
+  }
+  
+  /* Standorte */
+  .location-card {
+    padding: 1.5rem 1.4rem;
+    border-radius: 1.2rem;
+    background: #f9fafb;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+  }
+  
+  /* Testimonials */
+  .testimonial {
+    margin: 0;
+    padding: 1.5rem 1.4rem;
+    border-radius: 1.2rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.03);
+    font-size: 0.98rem;
+  }
+  
+  .testimonial blockquote {
+    margin: 0 0 0.7rem;
+    color: #374151;
+  }
+  
+  /* ===== Kontaktbereich ===== */
+  
+  .contact {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+    gap: 2.5rem;
+    align-items: start;
+  }
+  
+  .contact__info h2 {
+    margin-bottom: 0.6rem;
+  }
+  
+  .contact__info p {
+    margin-bottom: 1rem;
+    color: var(--color-muted);
+  }
+  
+  .contact__details {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    color: var(--color-text);
+  }
+  
+  .contact__details li + li {
+    margin-top: 0.3rem;
+  }
+
+  /* ===== ÜBER UNS ===== */
+  .ueberuns {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+  
+  .ueberuns__image {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ueberuns__placeholder {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 4 / 3;
+    border-radius: 1.5rem;
+    border: 1px dashed rgba(148, 163, 184, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #6b7280;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .ueberuns__text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .ueberuns__text p {
+    color: #4b5563;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .ueberuns {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  
+    .ueberuns__image {
+      order: -1; /* Bild nach oben */
+    }
+  }
+  
+  
+  /* Formular */
+  .contact__form {
+    background: var(--color-surface);
+    border-radius: 1.2rem;
+    padding: 1.8rem 1.6rem;
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(148, 163, 184, 0.45);
+  }
+  
+  .form__group {
+    margin-bottom: 1rem;
+  }
+  
+  .form__group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+  
+  .form__group input,
+  .form__group textarea {
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    border-radius: 0.75rem;
+    border: 1px solid #cbd5f5;
+    font: inherit;
+    resize: vertical;
+  }
+  
+  .form__group input:focus,
+  .form__group textarea:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+    border-color: transparent;
+  }
+  
+  /* Hinweis unter dem Formular */
+  .form__hint {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin: 0 0 0.8rem;
+  }
+  
+  /* Zwei Spalten im Formular */
+  .form__group--inline {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  
+  /* ===== Footer ===== */
+  
+  .footer {
+    background: #111827;
+    color: #e5e7eb;
+    padding: 1.6rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .footer__links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer__links a {
+    color: #9ca3af;
+  }
+  
+  .footer__links a:hover {
+    color: var(--color-secondary);
+  }
+  
+  /* ===== Responsive Styles ===== */
+  
+  @media (max-width: 960px) {
+    .hero__inner {
+      grid-template-columns: minmax(0, 1.1fr);
+    }
+  
+    .hero__image {
+      order: -1;
+    }
+  
+    .contact {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .grid--3 {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  
+    .header__inner {
+      padding: 0.6rem 0;
+    }
+  
+    .header__cta {
+      display: none;
+    }
+  
+    .nav-toggle-label {
+      display: block;
+    }
+  
+    .nav {
+      position: absolute;
+      inset: 100% 0 auto;
+      background: rgba(247, 246, 246, 0.98);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem 1.5rem 1rem;
+      transform-origin: top;
+      transform: scaleY(0);
+      opacity: 0;
+      pointer-events: none;
+    }
+  
+    .nav a {
+      padding: 0.4rem 0;
+    }
+  
+    .nav-toggle:checked ~ .nav {
+      transform: scaleY(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+    .hero {
+      padding-top: 4.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero__actions {
+      flex-direction: column;
+    }
+  
+    .footer__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  h1, h2, h3 {
+    color: var(--color-text);
+  }
+  
+  /* Kein horizontales Scrollen durch das Absperrband */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Absperrband zentriert, aber außerhalb des Viewports erlaubt */
+  .absperrband {
+    position: absolute;
+    left: 50%;
+    bottom: -3rem;
+    transform: translateX(-50%);
+    width: 120%;
+    max-width: none;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  /* Bild-Karte innerhalb der Leistungen */
+  .card--image {
+    padding: 0;              /* kein Innenabstand */
+    overflow: hidden;        /* Bild darf bis an den Rand */
+    display: block;
+    /* gleiche Optik wie andere Cards (Rahmen, Radius, Schatten) kommt von .card */
+    aspect-ratio: 4 / 3;     /* Höhe ähnlich den anderen Kacheln; gern anpassen */
+  }
+
+  .card--image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* füllt die Fläche ohne Verzerrung */
+    display: block;
+    border-radius: inherit;  /* runde Ecken wie die Card */
+  }
