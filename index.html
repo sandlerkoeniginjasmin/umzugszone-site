@@ -299,44 +299,34 @@
         </ul>
       </div>
 
-      <form name="kontakt"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      action="/danke.html"
-      class="contact__form">
-
-        <!-- Netlify braucht beides: name + hidden form-name -->
-        <input type="hidden" name="form-name" value="kontakt" />
-
-        <!-- Spam-Honeypot (für Menschen unsichtbar) -->
-        <p class="hidden-field" aria-hidden="true">
-          <label>Bitte leer lassen: <input name="bot-field" /></label>
-        </p>
-
+      <form action="https://formspree.io/f/xzzyzjgr" method="POST" class="contact__form">
         <div class="form__group">
           <label for="name">Name *</label>
           <input type="text" id="name" name="name" required />
         </div>
-
+      
         <div class="form__group form__group--inline">
           <div>
             <label for="email">E-Mail *</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="_replyto" required />
           </div>
           <div>
             <label for="phone">Telefon</label>
             <input type="tel" id="phone" name="phone" />
           </div>
         </div>
-
+      
         <div class="form__group">
           <label for="details">Ihr Umzug / Anfrage *</label>
-          <textarea id="details" name="details" rows="5" required></textarea>
+          <textarea id="details" name="message" rows="5" required></textarea>
         </div>
-
+      
+        <input type="hidden" name="_subject" value="Neue Anfrage von umzugszone.ch" />
+        <input type="hidden" name="_language" value="de" />
+      
         <button type="submit" class="btn btn--block">Anfrage senden</button>
-      </form>
+        <input type="hidden" name="_next" value="https://umzugszone.ch/danke.html" />
+      </form>     
 
       
     </div>
