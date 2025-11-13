@@ -885,3 +885,6 @@
     display: block;
     border-radius: inherit;  /* runde Ecken wie die Card */
   }
+
+  .hidden-field { display:none; }
+
